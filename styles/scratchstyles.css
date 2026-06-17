@@ -1,0 +1,60 @@
+/* Import Quicksand font */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+body {
+    background-color: rgb(255, 240, 250);
+    font-family: 'Quicksand', sans-serif;
+    color: rgb(70, 20, 50);
+    margin: 0;
+    padding: 20px;
+}
+
+.navbox {
+    background-color: white;
+    padding: 10px;
+    border: 2px solid pink;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.title {
+    text-align: center;
+    text-decoration: underline;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.intro {
+    text-align: center;
+    font-style: italic;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.box {
+    border: 2px solid rgb(255, 150, 200);
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    background-color: white;
+    border-radius: 10px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.one { background-color: rgb(255, 230, 240); }
+.two { background-color: rgb(255, 235, 245); }
+.three { background-color: rgb(255, 240, 250); }
+.four { background-color: rgb(255, 245, 255); }
+
+.photo {
+    max-width: 60%;
+    height: auto;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.bottomlink {
+    text-align: center;
+    margin-top: 40px;
+    font-family: 'Quicksand', sans-serif;
+}

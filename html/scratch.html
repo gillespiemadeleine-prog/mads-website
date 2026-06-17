@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madeleine's Scratch Page</title>
+    <link rel="stylesheet" href="../styles/scratchstyles.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <div class="navbox">
+        <a href="../index.html">Home</a> |
+        <a href="../html/resume.html">Resume</a> |
+        <a href="#top">Top of Page</a> |
+        <a href="webapp.html">My Web App</a>
+    </div>
+
+    <h1 id="top" class="title">Madeleine's Scratch Page</h1>
+    <p class="intro">This page was created completely from scratch to demonstrate HTML and CSS skills.</p>
+
+    <!-- Div 1 -->
+    <div class="box one">
+        <h2>What I Like To Do</h2>
+        <p>Here are lists showing my indoor and outdoor activities.</p>
+
+        <ol>
+            <li>Indoors
+                <ul>
+                    <li>Pilates</li>
+                    <li>Games</li>
+                    <li>Crafts</li>
+                </ul>
+            </li>
+
+            <li>Outdoors
+                <ul>
+                    <li>Going to the beach</li>
+                    <li>Hiking</li>
+                    <li>Running</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <!-- Div 2 -->
+    <div class="box two">
+        <h2>This is My Family</h2>
+        <img src="../Images/familyofmads.jpg" height="300" alt="My Family" class="photo">
+        <p>I have two parents, two sisters, one brother, and one brother-in-law.</p>
+    </div>
+
+    <!-- Div 3 -->
+    <div class="box three">
+        <h2>A Video About My Favorite Book</h2>
+        <p>Here is an embedded YouTube video:</p>
+
+        <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/nyV61Hh9KdA?start=1"
+            title="YouTube video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <!-- Div 4 -->
+    <div class="box four">
+        <h2>Interactive Tableau Graph</h2>
+        <p>This is a live Tableau visualization:</p>
+
+        <div class='tableauPlaceholder' id='vizMadeleine' style='position: relative'>
+            <noscript>
+                <a href='#'>
+                    <img alt='Tableau Graph'
+                        src='https://public.tableau.com/static/images/Da/DataforaCause-GlobalPeaceScores/DASHBOARD/1.png'
+                        style='border: none' />
+                </a>
+            </noscript>
+
+            <object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='DataforaCause-GlobalPeaceScores/DASHBOARD' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+            </object>
+        </div>
+
+        <script type='text/javascript'>
+            var divElement = document.getElementById('vizMadeleine');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            vizElement.style.width = '100%';
+            vizElement.style.height = '600px';
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        </script>
+    </div>
+
+    <p class="bottomlink">
+        <a href="#top">Back to Top</a>
+    </p>
+
+</body>
+</html>

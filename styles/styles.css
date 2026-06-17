@@ -1,0 +1,74 @@
+/* Import Quicksand font */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* Soft Pink Bootstrap Overrides */
+
+body {
+    background-color: #ffeaf5;
+    font-family: 'Quicksand', sans-serif;
+    color: #5a0033;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    min-height: 100vh;
+    background-color: #ffcee3;
+    padding: 20px;
+    border-right: 3px solid #ffb3d4;
+}
+
+.sidebar-name {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #5a0033;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.profile-pic {
+    width: 100%;
+    border-radius: 10px;
+    border: 3px solid #ffb3d4;
+}
+
+/* Sidebar Links */
+.nav-link {
+    color: #5a0033;
+    font-weight: 600;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: white;
+    background-color: #ff9fc8;
+    border-radius: 6px;
+}
+
+/* Main Content */
+.content {
+    padding: 30px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.main-photo {
+    max-width: 350px;
+    display: block;
+    margin-top: 20px;
+}
+
+/* Card Headers */
+.section-header {
+    background-color: #ffb3d4;
+    color: #5a0033;
+    font-weight: bold;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.side-photo {
+    height: 300px;
+    width: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}

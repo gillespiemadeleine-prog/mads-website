@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madeleine's Web App</title>
+
+    <style>
+        body {
+            background-color: #ffeaf5;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #5a0033;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .navbox {
+            background-color: white;
+            padding: 10px;
+            border: 2px solid pink;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .app-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffcee3;
+            border-radius: 12px;
+            padding: 20px;
+            border: 2px solid #ffb3d4;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .btn {
+            background-color: #ff9fc8;
+            color: #5a0033;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #ff8ab9;
+        }
+
+        .input-row {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        input[type="number"] {
+            padding: 8px;
+            border-radius: 6px;
+            border: 1px solid #ffb3d4;
+            width: 120px;
+        }
+
+        .message {
+            margin-top: 15px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .attempts {
+            margin-top: 5px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .backlink {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        a {
+            color: #5a0033;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbox">
+        <a href="../index.html">Home</a> |
+        <a href="../html/resume.html">Resume</a> |
+        <a href="../html/aboutme.html">About Me</a> |
+        <a href="../html/scratch.html">Scratch Page</a>
+    </div>
+
+    <div class="app-container">
+        <h1>Number Guessing Game</h1>
+        <p style="text-align:center;">
+            I’m thinking of a number between <strong>1 and 100</strong>.  
+            See how many tries it takes you to guess it!
+        </p>
+
+        <div class="input-row">
+            <input type="number" id="guessInput" placeholder="Enter a number">
+            <button class="btn" id="guessButton">Guess</button>
+        </div>
+
+        <div class="message" id="message"></div>
+        <div class="attempts" id="attempts"></div>
+
+        <div style="text-align:center; margin-top:20px;">
+            <button class="btn" id="resetButton">Start New Game</button>
+        </div>
+    </div>
+
+    <p class="backlink">
+        <a href="../html/scratch.html">Back to Scratch Page</a>
+    </p>
+
+    <script>
+        let secretNumber;
+        let attempts;
+
+        function startGame() {
+            secretNumber = Math.floor(Math.random() * 100) + 1;
+            attempts = 0;
+            document.getElementById('message').textContent = "Game started! Make your first guess.";
+            document.getElementById('attempts').textContent = "";
+            document.getElementById('guessInput').value = "";
+        }
+
+        function handleGuess() {
+            const input = document.getElementById('guessInput');
+            const value = Number(input.value);
+            const messageEl = document.getElementById('message');
+            const attemptsEl = document.getElementById('attempts');
+
+            if (!value || value < 1 || value > 100) {
+                messageEl.textContent = "Please enter a number between 1 and 100.";
+                return;
+            }
+
+            attempts++;
+
+            if (value === secretNumber) {
+                messageEl.textContent = `You got it! The number was ${secretNumber}. 🎉`;
+                attemptsEl.textContent = `It took you ${attempts} attempt(s). Click "Start New Game" to play again.`;
+            } else if (value < secretNumber) {
+                messageEl.textContent = "Too low! Try a higher number.";
+                attemptsEl.textContent = `Attempts: ${attempts}`;
+            } else {
+                messageEl.textContent = "Too high! Try a lower number.";
+                attemptsEl.textContent = `Attempts: ${attempts}`;
+            }
+
+            input.value = "";
+            input.focus();
+        }
+
+        document.getElementById('guessButton').addEventListener('click', handleGuess);
+        document.getElementById('resetButton').addEventListener('click', startGame);
+        document.getElementById('guessInput').addEventListener('keyup', function (e) {
+            if (e.key === 'Enter') {
+                handleGuess();
+            }
+        });
+
+        startGame();
+    </script>
+
+</body>
+</html>
